@@ -5,7 +5,7 @@
   "description": "\"Мой первый проект на Хекслете\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node index.js"
   },
   "repository": {
     "type": "git",

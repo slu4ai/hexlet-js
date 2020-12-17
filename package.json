@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/slu4ai/hexlet-js/issues"
   },
-  "homepage": "https://github.com/slu4ai/hexlet-js#readme"
+  "homepage": "https://github.com/slu4ai/hexlet-js#readme",
+  "dependencies": {
+    "semver": "^7.3.4"
+  }
 }

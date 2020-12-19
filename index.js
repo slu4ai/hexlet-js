@@ -15,3 +15,18 @@ const sumSquareDifference = (n) => {
   return squareOfSum(n) - sumSquare(n);
 };
 sumSquareDifference(22);
+
+const isPowerOfThree = (n) => {
+  // определяет, является ли число n натуральной степенью тройки
+  let i = 0;
+
+  while (i <= n) {
+    if (3 ** i === n) {
+      return true;
+    }
+    i += 1;
+  }
+
+  return false;
+};
+isPowerOfThree(243);

@@ -16,7 +16,6 @@ const sumSquareDifference = (n) => {
 };
 sumSquareDifference(22);
 
-
 // определяет, является ли число n натуральной степенью тройки
 const isPowerOfThree = (n) => {
   let i = 0;

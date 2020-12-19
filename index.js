@@ -7,9 +7,11 @@ const sumSquareDifference = (n) => {
   const sumSquare = (b) => (b === 1 ? 1 : b * b + sumSquare(b - 1));
   // квадрат суммы натуральных чисел от 1 до с
   const squareOfSum = (c) => square(sumSequence(c));
+
   if (n < 1) {
     return NaN;
   }
+
   return squareOfSum(n) - sumSquare(n);
 };
 sumSquareDifference(22);

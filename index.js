@@ -57,3 +57,31 @@ const isHappyTicket = (num) => {
   return false;
 };
 isHappyTicket('224332');
+
+// проверяет сбалансированы ли скобки
+const areBracketsBalanced = (brackets) => {
+  if (brackets === '') {
+    return true;
+  }
+
+  let i = 0;
+  // первая полустрока равна строке из открытых скобок
+  while (i < brackets.length / 2) {
+    if (brackets[i] !== '(') {
+      return false;
+    }
+    i += 1;
+  }
+
+  let j = brackets.length / 2;
+  // вторая полустрока равна строке из закрытых скобок
+  while (j < brackets.length) {
+    if (brackets[j] !== ')') {
+      return false;
+    }
+    j += 1;
+  }
+
+  return true;
+};
+areBracketsBalanced('(())');

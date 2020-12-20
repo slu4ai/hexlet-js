@@ -30,3 +30,30 @@ const isPowerOfThree = (n) => {
   return false;
 };
 isPowerOfThree(243);
+
+// счастливый билет
+const isHappyTicket = (num) => {
+  // сумма цифр числа
+  const sumOfDigits = (n) => {
+    const nstr = String(n);
+    let result = 0;
+    for (let i = 0; i < nstr.length; i += 1) {
+      result += Number(nstr[i]);
+    }
+    return result;
+  };
+  // первая половина цифр билета
+  const ticket1 = Number(num.slice(0, num.length / 2));
+  // вторая половина цифр билета
+  const ticket2 = Number(num.slice(num.length / 2));
+
+  if (num.length % 2 !== 0) {
+    return false;
+  }
+  if (sumOfDigits(ticket1) === sumOfDigits(ticket2)) {
+    return true;
+  }
+
+  return false;
+};
+isHappyTicket('224332');

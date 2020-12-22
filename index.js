@@ -85,3 +85,24 @@ const areBracketsBalanced = (brackets) => {
   return true;
 };
 areBracketsBalanced('(())');
+
+// сколько есть способов без двух нулей идущих подряд
+const withoutTwoZeros = (zero, one) => {
+  const factorial = (n) => {
+    if (n === 0) {
+      return 1;
+    }
+    let result = 1;
+    for (let i = 1; i <= n; i += 1) {
+      result *= i;
+    }
+    return result;
+  };
+
+  if (zero > one + 1) {
+    return 0;
+  }
+  // равно сочетанию one + 1 элементов по zero
+  return factorial(one + 1) / (factorial(zero) * factorial(one + 1 - zero));
+};
+withoutTwoZeros(2, 5);

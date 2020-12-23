@@ -60,31 +60,33 @@ isHappyTicket('224332');
 
 // проверяет сбалансированы ли скобки
 export const areBracketsBalanced = (brackets) => {
+  // показывает количество скобок в строке
+  const countChars = (str, char) => {
+    let i = 0;
+    let count = 0;
+    while (i < str.length) {
+      if (str[i] === char) {
+        count += 1;
+      }
+      i += 1;
+    }
+
+    return count;
+  };
+
   if (brackets === '') {
     return true;
   }
-
-  let i = 0;
-  // первая полустрока равна строке из открытых скобок
-  while (i < brackets.length / 2) {
-    if (brackets[i] !== '(') {
-      return false;
-    }
-    i += 1;
+  if (brackets[0] !== '(') {
+    return false;
+  }
+  if (countChars(brackets, '(') === countChars(brackets, ')')) {
+    return true;
   }
 
-  let j = brackets.length / 2;
-  // вторая полустрока равна строке из закрытых скобок
-  while (j < brackets.length) {
-    if (brackets[j] !== ')') {
-      return false;
-    }
-    j += 1;
-  }
-
-  return true;
+  return false;
 };
-areBracketsBalanced('(())');
+areBracketsBalanced('(()())');
 
 // сколько есть способов без двух нулей идущих подряд
 export const withoutTwoZeros = (zero, one) => {

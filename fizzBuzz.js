@@ -20,4 +20,4 @@ const fizzBuzz = (begin, end) => {
     console.log(divide(i - 1));
   }
 };
-fizzBuzz(11, 20);
+export default fizzBuzz;

@@ -5,7 +5,7 @@ fizzBuzz(13, 20);
 dnaToRna('AACCTG');
 
 // разность квадрата суммы и суммы квадратов последовательности натуральных чисел от 1 до n
-const sumSquareDifference = (n) => {
+export const sumSquareDifference = (n) => {
   const square = (m) => m * m;
   // сумма натуральных чисел от 1 до а
   const sumSequence = (a) => (a === 1 ? 1 : a + sumSequence(a - 1));
@@ -23,7 +23,7 @@ const sumSquareDifference = (n) => {
 sumSquareDifference(22);
 
 // определяет, является ли число n натуральной степенью тройки
-const isPowerOfThree = (n) => {
+export const isPowerOfThree = (n) => {
   let i = 0;
 
   while (i <= n) {
@@ -38,7 +38,7 @@ const isPowerOfThree = (n) => {
 isPowerOfThree(243);
 
 // счастливый билет
-const isHappyTicket = (num) => {
+export const isHappyTicket = (num) => {
   // сумма цифр числа
   const sumOfDigits = (n) => {
     const nstr = String(n);
@@ -65,7 +65,7 @@ const isHappyTicket = (num) => {
 isHappyTicket('224332');
 
 // проверяет сбалансированы ли скобки
-const areBracketsBalanced = (brackets) => {
+export const areBracketsBalanced = (brackets) => {
   if (brackets === '') {
     return true;
   }
@@ -93,7 +93,7 @@ const areBracketsBalanced = (brackets) => {
 areBracketsBalanced('(())');
 
 // сколько есть способов без двух нулей идущих подряд
-const withoutTwoZeros = (zero, one) => {
+export const withoutTwoZeros = (zero, one) => {
   const factorial = (n) => {
     if (n === 0) {
       return 1;

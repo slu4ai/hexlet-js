@@ -1,9 +1,3 @@
-import fizzBuzz from './fizzBuzz';
-import dnaToRna from './dnaToRna';
-
-fizzBuzz(13, 20);
-dnaToRna('AACCTG');
-
 // разность квадрата суммы и суммы квадратов последовательности натуральных чисел от 1 до n
 export const sumSquareDifference = (n) => {
   const square = (m) => m * m;

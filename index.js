@@ -60,6 +60,10 @@ isHappyTicket('224332');
 
 // проверяет сбалансированы ли скобки
 export const areBracketsBalanced = (brackets) => {
+  if (brackets === '') {
+    return true;
+  }
+
   let count = 0;
   for (let i = 0; i < brackets.length; i += 1) {
     if (brackets[i] === '(') {

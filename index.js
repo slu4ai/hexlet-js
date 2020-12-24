@@ -33,6 +33,9 @@ isPowerOfThree(243);
 
 // счастливый билет
 export const isHappyTicket = (number) => {
+  if (number.length % 2 !== 0) {
+    return false;
+  }
   // сумма цифр числа
   const sumOfDigits = (n) => {
     const nstr = String(n);
@@ -46,10 +49,6 @@ export const isHappyTicket = (number) => {
   const num = sumOfDigits(Number(number.slice(0, number.length / 2)));
   // вторая половина цифр билета
   const ber = sumOfDigits(Number(number.slice(number.length / 2)));
-
-  if (number.length % 2 !== 0) {
-    return false;
-  }
 
   return num === ber;
 };

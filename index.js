@@ -113,7 +113,7 @@ export const reverseInt = (integer) => {
   }
 
   if (integer < 0) {
-    return -1 * Number(result);
+    return -Number(result);
   }
 
   return Number(result);

@@ -105,3 +105,21 @@ export const withoutTwoZeros = (zero, one) => {
   return factorial(one + 1) / (factorial(zero) * factorial(one + 1 - zero));
 };
 withoutTwoZeros(2, 5);
+
+// переворот целого числа
+export const reverseInt = (integer) => {
+  // перевод целого числа в строку
+  const integerstr = String(Math.abs(integer));
+  let result = '';
+
+  for (let i = 0; i < integerstr.length; i += 1) {
+    result = `${integerstr[i]}${result}`;
+  }
+
+  if (integer < 0) {
+    return -1 * Number(result);
+  }
+
+  return Number(result);
+};
+reverseInt(-5600);

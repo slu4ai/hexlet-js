@@ -32,7 +32,7 @@ export const isPowerOfThree = (n) => {
 isPowerOfThree(243);
 
 // счастливый билет
-export const isHappyTicket = (num) => {
+export const isHappyTicket = (number) => {
   // сумма цифр числа
   const sumOfDigits = (n) => {
     const nstr = String(n);
@@ -43,20 +43,17 @@ export const isHappyTicket = (num) => {
     return result;
   };
   // первая половина цифр билета
-  const ticket1 = Number(num.slice(0, num.length / 2));
+  const num = sumOfDigits(Number(number.slice(0, number.length / 2)));
   // вторая половина цифр билета
-  const ticket2 = Number(num.slice(num.length / 2));
+  const ber = sumOfDigits(Number(number.slice(number.length / 2)));
 
-  if (num.length % 2 !== 0) {
+  if (number.length % 2 !== 0) {
     return false;
   }
-  if (sumOfDigits(ticket1) === sumOfDigits(ticket2)) {
-    return true;
-  }
 
-  return false;
+  return num === ber;
 };
-isHappyTicket('224332');
+isHappyTicket('120012');
 
 // проверяет сбалансированы ли скобки
 export const areBracketsBalanced = (brackets) => {

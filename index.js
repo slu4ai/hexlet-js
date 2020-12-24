@@ -135,17 +135,15 @@ export const isHappyNumber = (a) => {
     for (let i = 0; i < numstr.length; i += 1) {
       result += square(Number(numstr[i]));
     }
-
     return result;
   };
 
   let counter = a;
   for (let i = 1; i <= 10; i += 1) {
     counter = sumOfsquareDigits(counter);
-  }
-
-  if (counter === 1) {
-    return true;
+    if (counter === 1) {
+      return true;
+    }
   }
 
   return false;

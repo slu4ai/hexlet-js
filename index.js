@@ -123,3 +123,31 @@ export const reverseInt = (integer) => {
   return Number(result);
 };
 reverseInt(-5600);
+
+// проверяет является ли число счастливым
+export const isHappyNumber = (a) => {
+  // сумма квадратов цифр числа
+  const sumOfsquareDigits = (num) => {
+    const square = (n) => n * n;
+    const numstr = String(num);
+    let result = 0;
+
+    for (let i = 0; i < numstr.length; i += 1) {
+      result += square(Number(numstr[i]));
+    }
+
+    return result;
+  };
+
+  let counter = a;
+  for (let i = 1; i <= 10; i += 1) {
+    counter = sumOfsquareDigits(counter);
+  }
+
+  if (counter === 1) {
+    return true;
+  }
+
+  return false;
+};
+isHappyNumber(7);

@@ -201,19 +201,12 @@ export const reverse = (word) => (word.length < 2 ? word : `${word.slice(1)}${wo
 reverse('jaba');
 
 // форматирует время
-const formattedTime = (min) => {
-  // перевод часов
-  const hh = Math.floor((min / 60) % 24);
-  // перевод минут
-  const mm = min % 60;
-
-  if (hh < 10 && mm < 10) {
-    return `0${hh}:0${mm}`;
-  } if (hh < 10 && mm >= 10) {
-    return `0${hh}:${mm}`;
-  } if (hh >= 10 && mm < 10) {
-    return `${hh}:0${mm}`;
-  }
+export const formattedTime = (min) => {
+  // переводим часы и добавляем '0', если часов меньше 10
+  const hour = Math.floor((min / 60) % 24);
+  const hh = (hour >= 10 ? `${hour}` : `0${hour}`);
+  // переводим минуты и добавляем '0', если минут меньше 10
+  const mm = (min % 60 >= 10 ? `${min % 60}` : `0${min % 60}`);
 
   return `${hh}:${mm}`;
 };

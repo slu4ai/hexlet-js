@@ -211,3 +211,16 @@ export const formattedTime = (min) => {
   return `${hh}:${mm}`;
 };
 formattedTime(2782);
+
+// разница углов
+const diff = (int1, int2) => {
+  // разница между большим и меньшим углом
+  const difference = Math.max(int1, int2) - Math.min(int1, int2);
+
+  if (difference <= 180) {
+    return difference;
+  }
+
+  return 360 - difference;
+};
+diff(185, 0);

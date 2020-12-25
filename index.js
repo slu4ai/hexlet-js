@@ -177,3 +177,21 @@ export const ackerman = (m, n) => {
   return ackerman(m - 1, ackerman(m, n - 1));
 };
 ackerman(2, 3);
+
+// меняет регистр букв
+export const invertCase = (text) => {
+  const bigText = text.toUpperCase();
+  const smallText = text.toLowerCase();
+  let result = '';
+
+  for (let i = 0; i < text.length; i += 1) {
+    if (text[i] !== bigText[i]) {
+      result = `${result}${bigText[i]}`;
+    } else {
+      result = `${result}${smallText[i]}`;
+    }
+  }
+
+  return result;
+};
+invertCase('I loVe JS');

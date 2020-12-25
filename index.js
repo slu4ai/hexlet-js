@@ -163,7 +163,7 @@ export const isPerfect = (a) => {
 isPerfect(8128);
 
 // функция Аккермана
-const ackermann = (m, n) => {
+export const ackerman = (m, n) => {
   if (m < 0 || n < 0) {
     return null;
   }
@@ -171,9 +171,9 @@ const ackermann = (m, n) => {
     return n + 1;
   }
   if (m > 0 && n === 0) {
-    return ackermann(m - 1, 1);
+    return ackerman(m - 1, 1);
   }
 
-  return ackermann(m - 1, ackermann(m, n - 1));
+  return ackerman(m - 1, ackerman(m, n - 1));
 };
-ackermann(2, 3);
+ackerman(2, 3);

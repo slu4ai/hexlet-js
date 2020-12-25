@@ -195,3 +195,7 @@ export const invertCase = (text) => {
   return result;
 };
 invertCase('I loVe JS');
+
+// переворот строки
+export const reverse = (word) => (word.length < 2 ? word : `${word.slice(1)}${word[0]}`);
+reverse('jaba');

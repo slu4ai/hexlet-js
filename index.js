@@ -161,3 +161,19 @@ export const isPerfect = (a) => {
   return a === sumOfDivides(a) && a >= 6;
 };
 isPerfect(8128);
+
+// функция Аккермана
+const ackermann = (m, n) => {
+  if (m < 0 || n < 0) {
+    return null;
+  }
+  if (m === 0) {
+    return n + 1;
+  }
+  if (m > 0 && n === 0) {
+    return ackermann(m - 1, 1);
+  }
+
+  return ackermann(m - 1, ackermann(m, n - 1));
+};
+ackermann(2, 3);

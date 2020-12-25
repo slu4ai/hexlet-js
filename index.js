@@ -199,3 +199,22 @@ invertCase('I loVe JS');
 // переворот строки
 export const reverse = (word) => (word.length < 2 ? word : `${word.slice(1)}${word[0]}`);
 reverse('jaba');
+
+// форматирует время
+const formattedTime = (min) => {
+  // перевод часов
+  const hh = Math.floor((min / 60) % 24);
+  // перевод минут
+  const mm = min % 60;
+
+  if (hh < 10 && mm < 10) {
+    return `0${hh}:0${mm}`;
+  } if (hh < 10 && mm >= 10) {
+    return `0${hh}:${mm}`;
+  } if (hh >= 10 && mm < 10) {
+    return `${hh}:0${mm}`;
+  }
+
+  return `${hh}:${mm}`;
+};
+formattedTime(2782);

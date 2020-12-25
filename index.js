@@ -145,3 +145,20 @@ export const isHappyNumber = (a) => {
   return false;
 };
 isHappyNumber(7);
+
+// проверяет является ли число идеальным
+export const isPerfect = (a) => {
+  // сумма делителей числа
+  const sumOfDivides = (b) => {
+    let result = 1;
+    for (let i = 2; i < b; i += 1) {
+      if (b % i === 0) {
+        result += i;
+      }
+    }
+    return result;
+  };
+
+  return a === sumOfDivides(a) && a !== 1;
+};
+isPerfect(8128);

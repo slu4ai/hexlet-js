@@ -197,8 +197,8 @@ export const invertCase = (text) => {
 invertCase('I loVe JS');
 
 // переворот строки
-export const reverse = (word) => (word.length < 2 ? word : `${word.slice(1)}${word[0]}`);
-reverse('jaba');
+export const reverse = (word) => (word.length < 2 ? word : reverse(word.slice(1)) + word[0]);
+reverse('hexlet');
 
 // форматирует время
 export const formattedTime = (min) => {

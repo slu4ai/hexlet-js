@@ -224,3 +224,14 @@ const diff = (int1, int2) => {
   return 360 - difference;
 };
 diff(185, 0);
+
+// счастливый билет решение учителя
+const isHappyTicket1 = (num) => {
+  let balance = 0;
+
+  for (let i = 0, j = num.length - 1; i < j; i += 1, j -= 1) {
+    balance += +num[i] - +num[j];
+  }
+  return balance === 0;
+};
+isHappyTicket1('020011');
